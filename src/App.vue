@@ -1,29 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+	<!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
+	<!-- <Home /> -->
+	<app-qoute>
+		<h1>A wonderful Qoute!</h1>
+		<p>{{ sub }}</p>
+	</app-qoute>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+// import HelloWorld from "./components/HelloWorld.vue";
+// import Home from "./components/Home";
+import Qoute from "./components/Qoute";
 
 export default {
-  name: "App",
-  components: {
-    HelloWorld,
-  },
+	name: "App",
+	data() {
+		return {
+			//qoute: "A wonderful Qoute",
+			sub: "yeap, it's Wonderful!",
+		};
+	},
+	components: {
+		// HelloWorld,
+		// Home,
+		appQoute: Qoute,
+	},
 };
 </script>
 
 <style lang="scss">
-body {
-  background-color: #585d61;
-}
+@import "./sass/main";
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #fff;
-  margin-top: 60px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 </style>

@@ -1,0 +1,113 @@
+.btn {
+	&:link,
+	&:visited {
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.5rem 4rem;
+		border-radius: 10rem;
+		transition: all 0.2s; /*
+            transition only will work on the element initial state
+            this means if we want to have transition animation on 'hover' or ...
+            we have to define transition on initial state (link in this case)
+            */
+		/* this kind of transition will create a smooth animation for
+              any('all') animation/moves in element
+            */
+
+		position: relative;
+	}
+
+	&:hover {
+		transform: translateY(-0.3rem);
+		box-shadow: 0 1rem 2rem rgba($color-shadow, 0.8); /*
+          'box-shadow' is the shadow property for an el, its values are:
+            x(direction shadow), y(direction shadow), blur
+            (the depth of shadow), the-color of shadow
+          */
+
+		&::after {
+			transform: scaleX(1.3) scaleY(1.7);
+			opacity: 0;
+		}
+	}
+
+	&:active {
+		transform: translate(-0.1rem);
+		box-shadow: 0 0.5rem 1rem rgba($color-shadow, 0.8);
+	}
+
+	&--white {
+		background-color: $color-white;
+		color: $color-grey-dark-1;
+		display: inline-block;
+
+		&::after {
+			background-color: $color-white;
+		}
+	}
+
+	&--blue {
+		background-color: $color-default;
+		color: $color-white;
+		display: inline-block;
+
+		&::after {
+			background-color: $color-default;
+		}
+	}
+
+	&::after {
+		content: ""; /*
+          an 'after' or 'before' sudo-element must have
+          a content property even set it to empty-string
+          otherwise it doesn't appear on the page
+        */
+		display: inline-block;
+		height: 100%;
+		width: 100%; /*
+          because 'after/before' sudo-element will work as
+          a child to the element itself so we have to define
+          height and width to 100% to cover it's parent dimension
+        */
+		border-radius: 10rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+
+		transition: all 0.4s; /* to have a smooth animation on btn */
+	}
+
+	&--animated {
+		animation: moveInBottom 0.75s ease-out 0.75s;
+		animation-fill-mode: backwards; /*
+          this will apply the situation of the 0% of animation
+          so even using delay the initial state is applied
+        */
+	}
+}
+
+.btn-text {
+	&:link,
+	&:visited {
+		font-size: $font-size-default;
+		color: $color-default;
+		display: inline-block;
+		text-decoration: none;
+		border-bottom: 1px solid $color-default;
+		padding: 3px;
+		transition: all 0.2s;
+	}
+
+	&:hover {
+		color: $color-white;
+		background-color: $color-default;
+		transform: translateY(-2px);
+		box-shadow: 0 0.5rem 2rem rgba($color-shadow, 0.4);
+	}
+
+	&:active {
+		transform: translate(-1px);
+		box-shadow: 0 0.5rem 1rem rgba($color-shadow, 0.4);
+	}
+}

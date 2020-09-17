@@ -1,0 +1,49 @@
+.header {
+	height: 95vh;
+	background-image: linear-gradient(
+			to right bottom,
+			rgba($color-default-lighten, 0.8),
+			rgba($color-default, 0.8),
+			rgba($color-default-darken, 0.8)
+		),
+		url("~@/assets/img/images/breakingofday-1920x1080.png");
+	background-size: cover; /* to fit the image to element size */
+	background-position: top; /*
+          to keep the "top" of image fixed position on changing screen size
+          (so cropping background image)
+					*/
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+	position: relative;
+
+	&__logo-box {
+		position: absolute; /*
+          to make the fixed on the parent el, this needs the parent to
+           have a position set to relative */
+		top: 4rem;
+		left: 4rem;
+	}
+
+	&__logo {
+		height: 3.5rem;
+		cursor: pointer;
+	}
+
+	&__text-box {
+		/*
+            to center an element and its child:
+            ** its parent has to have a position set to relative
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          */
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		text-align: center;
+	}
+}

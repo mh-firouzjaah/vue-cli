@@ -1,0 +1,37 @@
+/*
+colors:
+light green: #7ed56f
+medium green: #55c57a
+dark green: #28b485
+
+light blue: #1e50dc,
+medium blue: #143caf,
+dark blue: #142861,
+*/
+
+// COLORS
+$color-default: #143bad;
+$color-default-lighten: #2998ff; //lighten(#143bad, 30%);
+$color-default-darken: darken(#143bad, 20%);
+$color-shadow: #241010;
+$color-grey-light-1: #f5f5f5;
+$color-grey-light-2: #d4d4d4;
+$color-grey-dark-1: #777;
+$color-white: #fff;
+
+$color-first-light: #7ed56f;
+$color-first-dark: #28b485;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+// GRID
+$grid-width: 114rem;
+$grid-gutter-vertical: 2rem;
+$grid-gutter-horizontal: 6rem;
+
+// FONT
+$font-size-default: 1.6rem;
